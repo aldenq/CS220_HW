@@ -7,13 +7,13 @@ struct Trie
     uint32_t longest;
 
     uint64_t count;
-    struct Trie *conns[26];
+    struct Trie *conns[128]; //optimizing for cpu time, not memory usage.
     char is_end;
     void *data;
 };
 
 /**
- * \brief constructor for Trie
+ * \brief "constructor" for Trie
  * \returns pointer to new trie
  */
 struct Trie *Trie_new();

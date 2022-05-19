@@ -12,17 +12,16 @@ struct ZombieLookup
 
 /**
  * \brief used to store names and descriptions of zombies
- * \warning names must be only lowercase letters(ascii values 97-122 inclusive)
  * 
  */ 
-struct ZombieData
+struct Zombie
 {
     char *name;
     char *stringDesc;
 };
 
 /**
- * \brief constructor for ZombieLookup 
+ * \brief 'constructor' for ZombieLookup 
  * \returns pointer to new ZombieLookup
  */
 struct ZombieLookup *ZombieLookup_new();
@@ -32,7 +31,7 @@ struct ZombieLookup *ZombieLookup_new();
  * \param zombieLookup pointer to zombielookup which the new zombie should be added to
  * \param zombieData pointer to zombiedata which should be inserted 
  */
-void ZombieLookup_addZombie(struct ZombieLookup *zombieLookup, struct ZombieData *zombieData);
+void ZombieLookup_addZombie(struct ZombieLookup *zombieLookup, struct Zombie *zombieData);
 
 /**
  * \brief given a zombie name the returns the data for that zombie
@@ -41,13 +40,13 @@ void ZombieLookup_addZombie(struct ZombieLookup *zombieLookup, struct ZombieData
  * \param name name of zombie which informated is requested for
  * \returns pointer to a zombieData struct which contains data on the requested zombie
  */
-struct ZombieData *ZombieLookup_lookup(struct ZombieLookup *zombieLookup, char *name);
+struct Zombie *ZombieLookup_lookup(struct ZombieLookup *zombieLookup, char *name);
 
 /**
- * \brief creates a new zombie/ constructor for ZombieData
+ * \brief creates a new zombie/ 'constructor' for ZombieData
  * \param name name of zombie (null terminated string)
  * \param descr description of zombie (null terminated string)
  * \returns pointer to the new zombieData
- * \warning names must be only lowercase letters (no spaces or numbers just ascii values 97-122 inclusive)
+ * \warning names must be only standard (non extended) ascii values
  */
-struct ZombieData *zombie_new(char *name, char *descr);
+struct Zombie *Zombie_new(char *name, char *descr);

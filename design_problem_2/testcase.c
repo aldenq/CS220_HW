@@ -6,15 +6,15 @@ int main(){
 
    
     
-    ZombieLookup_addZombie(lookup, zombie_new("blockyzombie", "weakness:potion of weakness + golden apple or smite enchantment"));
-    ZombieLookup_addZombie(lookup, zombie_new("bigzombie", "weakness: nuclear weapons"));
-    ZombieLookup_addZombie(lookup, zombie_new("smallzombie", "weakness: big zombies"));
-    ZombieLookup_addZombie(lookup, zombie_new("fictionalzombie", "weakness: change the plot"));
+    ZombieLookup_addZombie(lookup, Zombie_new("blocky zombie", "weakness:potion of weakness + golden apple or smite enchantment"));
+    ZombieLookup_addZombie(lookup, Zombie_new("big zombie", "weakness: nuclear weapons"));
+    ZombieLookup_addZombie(lookup, Zombie_new("small zombie", "weakness: big zombies"));
+    ZombieLookup_addZombie(lookup, Zombie_new("fictional zombie", "weakness: change the plot"));
 
 
-    printf("name:%s description:%s\n", "blockyzombie", ZombieLookup_lookup(lookup, "blockyzombie")->stringDesc);
-    printf("name:%s description:%s\n", "smallzombie", ZombieLookup_lookup(lookup, "smallzombie")->stringDesc);
-    printf("name:%s description:%s\n", "bigzombie", ZombieLookup_lookup(lookup, "bigzombie")->stringDesc);
-    printf("name:%s description:%s\n", "fictionalzombie", ZombieLookup_lookup(lookup, "fictionalzombie")->stringDesc);
+    printf("name:%s description:%s\n", "blocky zombie", ZombieLookup_lookup(lookup, "blocky zombie")->stringDesc);
+    printf("name:%s description:%s\n", "small zombie", ZombieLookup_lookup(lookup, "small zombie")->stringDesc);
+    printf("name:%s description:%s\n", "big zombie", ZombieLookup_lookup(lookup, "big zombie")->stringDesc);
+    printf("name:%s description:%s\n", "fictional zombie", ZombieLookup_lookup(lookup, "fictional zombie")->stringDesc);
     
 }

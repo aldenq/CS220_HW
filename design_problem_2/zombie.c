@@ -11,14 +11,14 @@ struct ZombieLookup *ZombieLookup_new()
     return (zombieLookup);
 }
 
-void ZombieLookup_addZombie(struct ZombieLookup *zombieLookup, struct ZombieData *zombieData)
+void ZombieLookup_addZombie(struct ZombieLookup *zombieLookup, struct Zombie *zombieData)
 {
     struct Trie *final = Trie_insert(zombieLookup->lookup, zombieData->name);
 
     final->data = zombieData;
 }
 
-struct ZombieData *ZombieLookup_lookup(struct ZombieLookup *zombieLookup, char *name)
+struct Zombie *ZombieLookup_lookup(struct ZombieLookup *zombieLookup, char *name)
 {
     struct Trie *final = Trie_exists(zombieLookup->lookup, name);
 
@@ -30,11 +30,12 @@ struct ZombieData *ZombieLookup_lookup(struct ZombieLookup *zombieLookup, char *
     return (final->data);
 }
 
-struct ZombieData *zombie_new(char *name, char *descr)
+struct Zombie *Zombie_new(char *name, char *descr)
 {
     int nameLen = strlen(name);
     int descrLen = strlen(descr);
-    struct ZombieData *zdata = (struct ZombieData *)malloc(sizeof(struct ZombieData));
+
+    struct Zombie *zdata = (struct Zombie *)malloc(sizeof(struct Zombie));
 
     zdata->name = (char *)malloc(nameLen);
     zdata->stringDesc = (char *)malloc(descrLen);
