@@ -1,0 +1,12 @@
+I may be going about this the completely wrong way as i missed the days in class when this assignment was discussed.
+anyway, as i gather, the program needs to be able to find common sequences of words amongst multiple samples of text.
+
+
+current scheme is to first hash every word in the string separately and combine those into an array, next, all samples which are being compared
+will have their hashed form turned into a BST which associates concatenated neighboring hashes to their respective array and index. should multiple of the same hashes exist 
+the bst node will have a singly linked list for all of them. 
+
+
+on second thought, the concatenated hashes would be 16 bits long which means it may be more practical to just allocate an array of pointers of length
+2^16 * 8 in place of using a BST as it would only end up being about half a mebibyte.
+
